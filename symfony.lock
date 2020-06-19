@@ -81,6 +81,18 @@
     "egulias/email-validator": {
         "version": "2.1.18"
     },
+    "friendsofsymfony/rest-bundle": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "cad41ef93d6150067ae2bb3c7fd729492dff6f0a"
+        },
+        "files": [
+            "./config/packages/fos_rest.yaml"
+        ]
+    },
     "laminas/laminas-code": {
         "version": "3.4.1"
     },
@@ -92,6 +104,18 @@
     },
     "monolog/monolog": {
         "version": "1.25.4"
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "6388de23860284db9acce0a7a5d9d13153bcb571"
+        },
+        "files": [
+            "./config/packages/nelmio_cors.yaml"
+        ]
     },
     "nikic/php-parser": {
         "version": "v4.5.0"
@@ -502,5 +526,11 @@
     },
     "webmozart/assert": {
         "version": "1.9.0"
+    },
+    "willdurand/jsonp-callback-validator": {
+        "version": "v1.1.0"
+    },
+    "willdurand/negotiation": {
+        "version": "v2.3.1"
     }
 }
