@@ -36,6 +36,18 @@ class ConcertController extends AbstractRestController
     }
 
     /**
+     * @Rest\Get("/{id}")
+     */
+    public function getOne(int $id)
+    {
+        $entity = $this->repository->find($id);
+        if ($entity == null) {
+            return $this->json("Not found", 404);
+        }
+        return $this->json($entity);
+    }
+
+    /**
      * @Rest\Post("")
      */
     public function add(Request $request)
@@ -84,5 +96,20 @@ class ConcertController extends AbstractRestController
         }
 
         return $this->json($form, 400);
+    }
+
+    /**
+     * @Rest\Delete("/{id}")
+     */
+    public function delete(int $id) {
+        $entity = $this->repository->find($id);
+        if ($entity == null) {
+            return $this->json("Not found", 404);
+        }
+
+        $this->entityManager->remove($entity);
+        $this->entityManager->flush();
+
+        return $this->json("Le concert a bien été supprimé");
     }
 }

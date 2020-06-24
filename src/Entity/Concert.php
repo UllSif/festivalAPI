@@ -43,7 +43,6 @@ class Concert
 
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="concerts")
-     * @ORM\JoinColumn(nullable=true)
      */
     private $artist;
 
