@@ -9,6 +9,7 @@ use App\Form\UserType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -59,6 +60,7 @@ class UserController extends AbstractRestController
 
     /**
      * @Rest\Get("")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function getAll() {
         $entities = $this->repository->findAll();

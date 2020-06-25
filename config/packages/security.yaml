@@ -34,9 +34,9 @@ security:
         - { path: ^/api/user, roles: IS_AUTHENTICATED_ANONYMOUSLY, method:["POST"]}
         - { path: ^/api/user, roles: ROLE_ADMIN, method:["GET"]}
         - { path: ^/api/artist, roles: IS_AUTHENTICATED_ANONYMOUSLY, method:["GET"]}
-        - { path: ^/api/artist, roles: ROLE_ADMIN, method:["POST", "PUT"]}
+        - { path: ^/api/artist, roles: ROLE_ADMIN, method:["POST", "PUT", "DELETE"]}
         - { path: ^/api/concert, roles: IS_AUTHENTICATED_ANONYMOUSLY, method:["GET"]}
-        - { path: ^/api/concert, roles: ROLE_ADMIN, method:["POST", "PUT"]}
+        - { path: ^/api/concert, roles: ROLE_ADMIN, method:["POST", "PUT", "DELETE"]}
         - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
 
         # - { path: ^/admin, roles: ROLE_ADMIN }

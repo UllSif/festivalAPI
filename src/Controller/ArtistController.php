@@ -9,6 +9,7 @@ use App\Form\ArtistType;
 use App\Repository\ArtistRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -51,6 +52,7 @@ class ArtistController extends AbstractRestController
 
     /**
      * @Rest\Post("")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function add(Request $request)
     {
@@ -81,6 +83,7 @@ class ArtistController extends AbstractRestController
 
     /**
      * @Rest\Put("/{id}")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(int $id, Request $request)
     {
@@ -115,6 +118,7 @@ class ArtistController extends AbstractRestController
 
     /**
      * @Rest\Delete("/{id}")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(int $id) {
         $entity = $this->repository->find($id);

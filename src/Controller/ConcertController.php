@@ -7,6 +7,7 @@ use App\Form\ConcertType;
 use App\Repository\ConcertRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -49,6 +50,7 @@ class ConcertController extends AbstractRestController
 
     /**
      * @Rest\Post("")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function add(Request $request)
     {
@@ -78,6 +80,7 @@ class ConcertController extends AbstractRestController
 
     /**
      * @Rest\Put("/{id}")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(int $id, Request $request)
     {
@@ -100,6 +103,7 @@ class ConcertController extends AbstractRestController
 
     /**
      * @Rest\Delete("/{id}")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(int $id) {
         $entity = $this->repository->find($id);
